@@ -1,0 +1,19 @@
+{
+  "compileOnSave": true,
+
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "lib": ["DOM","ES5","ES2015.Promise"],
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  },
+
+  "include": [
+    "src/**/*.ts"
+  ]
+}

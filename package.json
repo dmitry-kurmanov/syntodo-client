@@ -1,0 +1,46 @@
+{
+  "name": "syntodo",
+  "version": "0.0.1",
+  "description": "synergy todo",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "karma start",
+    "start": "concurrently \"webpack --env.buildType dev --watch\" \"live-server --open=./dist/\"",
+    "prod": "webpack --env.buildType prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitrykurmanov/syntodo.git"
+  },
+  "keywords": [
+    "synergy",
+    "todo",
+    "vue",
+    "spa"
+  ],
+  "author": "Dmitry Kurmanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmitrykurmanov/syntodo/issues"
+  },
+  "homepage": "https://github.com/dmitrykurmanov/syntodo#readme",
+  "devDependencies": {
+    "@types/node": "7.0.5",
+    "concurrently": "3.2.0",
+    "html-webpack-plugin": "2.28.0",
+    "live-server": "1.2.0",
+    "ts-loader": "2.0.0",
+    "typescript": "2.1.6",
+    "vue-loader": "10.0.3",
+    "vue-property-decorator": "3.4.0",
+    "vue-template-compiler": "2.1.10",
+    "webpack": "2.2.1"
+  },
+  "dependencies": {
+    "tslib": "^1.6.0",
+    "vue": "2.1.10",
+    "vue-router": "2.1.0",
+    "vuex": "2.1.0",
+    "vuex-router-sync": "4.0.2"
+  }
+}
