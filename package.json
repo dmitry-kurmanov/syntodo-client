@@ -5,8 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "karma start",
-    "start": "concurrently \"webpack --env.buildType dev --watch\" \"live-server --open=./dist/\"",
-    "prod": "webpack --env.buildType prod"
+    "start": "webpack-dev-server --env.buildType dev",
+    "prod": "webpack --env.buildType prod --progress"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,8 @@
     "vue-loader": "10.0.3",
     "vue-property-decorator": "3.4.0",
     "vue-template-compiler": "2.1.10",
-    "webpack": "2.2.1"
+    "webpack": "2.2.1",
+    "webpack-dev-server": "^2.2.0"
   },
   "dependencies": {
     "tslib": "^1.6.0",

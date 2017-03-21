@@ -15,11 +15,11 @@ module.exports = function(options) {
     var config = {
         entry: path.join(__dirname, './src/index.ts'),
         output: {
-            path: './dist/',
+            path: path.join(__dirname, './dist'),
             filename: 'app.js'
         },
         resolve: {
-            extensions: ['.ts']
+            extensions: ['.ts', '.js']
         },
         module: {
             rules: [
@@ -45,7 +45,12 @@ module.exports = function(options) {
                 template: 'src/template.html'
             })
         ],
-        devtool: options.buildType === 'prod' ? 'source-map' : 'inline-source-map' 
+        devtool: options.buildType === 'prod' ? 'source-map' : 'inline-source-map',
+        devServer: {
+            contentBase: path.join(__dirname, "dist"),
+            port: 9000,
+            open: true
+        }
     };
 
     if (options.buildType === 'prod') {
