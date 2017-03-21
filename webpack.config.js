@@ -13,30 +13,28 @@ var copyright = [
 
 module.exports = function(options) {
     var config = {
-        entry: path.join(__dirname, './src/index.ts'),
+        entry: path.join(__dirname, './src/index.js'),
         output: {
             path: path.join(__dirname, './dist'),
             filename: 'app.js'
         },
         resolve: {
-            extensions: ['.ts', '.js']
+            extensions: ['.vue', '.js']
         },
         module: {
             rules: [
-                {
-                    test: /\.(ts|tsx)$/,
-                    loader: 'ts-loader',
-                    options: {
-                        appendTsSuffixTo: [/\.vue$/]
-                    }
-                },
                 {
                     test: /\.vue$/,
                     loader: 'vue-loader',
                     options: {
                         esModule: true
                     }
-                }
+                },
+                {
+                    test: /\.js$/,
+                    loader: 'babel-loader',
+                    exclude: /node_modules/
+                },
             ]
         },
         plugins: [
@@ -48,8 +46,7 @@ module.exports = function(options) {
         devtool: options.buildType === 'prod' ? 'source-map' : 'inline-source-map',
         devServer: {
             contentBase: path.join(__dirname, "dist"),
-            port: 9000,
-            open: true
+            port: 9000
         }
     };
 
