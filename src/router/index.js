@@ -6,11 +6,11 @@ import Todo from '../views/Todo.vue'
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
+    //mode: 'history',
     // scrollBehavior: () => ({ y: 0 }),
     routes: [
-        { path: '/home1', component: Home},
-        { path: '/todo1', component: Todo },
+        { path: '/home', component: Home},
+        { path: '/todo', component: Todo },
         { path: '/', redirect: '/home' }
     ]
 })
