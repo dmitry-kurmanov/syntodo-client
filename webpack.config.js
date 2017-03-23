@@ -3,6 +3,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var HTMLPlugin = require('html-webpack-plugin');
+var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 var packageJson = require('./package.json');
 var copyright = [
@@ -41,7 +42,8 @@ module.exports = function(options) {
             new webpack.BannerPlugin(copyright),
             new HTMLPlugin({
                 template: 'src/template.html'
-            })
+            }),
+            new FriendlyErrorsWebpackPlugin()
         ],
         devtool: options.buildType === 'prod' ? 'source-map' : 'inline-source-map',
         devServer: {
