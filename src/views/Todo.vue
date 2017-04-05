@@ -57,7 +57,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .item-move {
         transition: all .5s cubic-bezier(.55,0,.1,1);
         -webkit-transition: all .5s cubic-bezier(.55,0,.1,1);
