@@ -12,7 +12,13 @@
     @Component
     export default class Calendar extends Vue {
         mounted() {
-            new Flatpickr(this.$el, {});
+            new Flatpickr(this.$el, {
+                onChange: this.onChange
+            });
+        }
+
+        onChange (selectedDates, dateStr, instance) {
+            alert(dateStr);
         }
     }
 </script>
