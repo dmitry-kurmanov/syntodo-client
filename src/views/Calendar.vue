@@ -1,6 +1,5 @@
 <template>
-    <input>
-    </input>
+    <input/>
 </template>
 
 <script>
@@ -11,13 +10,19 @@
 
     @Component
     export default class Calendar extends Vue {
+        instance = null
+
         mounted() {
-            new Flatpickr(this.$el, {
+            this.instance = new Flatpickr(this.$el, {
                 onChange: this.onChange
             });
         }
 
-        onChange (selectedDates, dateStr, instance) {
+        beforeDestroy() {
+            this.instance.destroy()
+        }
+
+        onChange(selectedDates, dateStr, instance) {
             alert(dateStr);
         }
     }
