@@ -1,16 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store'
 
-var app = new Vue({
+const app = new Vue({
     el: '#app',
-    router: router,
-    components: {
-        'app': App
-    },
-    render: function (createElement) {
-        return createElement(
-            'app'
-        )
-    }
-});
+    router,
+    store,
+    render: h => h(App)
+})
