@@ -16,7 +16,7 @@
                     :key="item.index"
                     move-class="item-move"
             >
-                <div class="item" :style="item.style" :index="item.index"></div>
+                <div class="item" :style="item.style" :index="item.index">{{item.text}}</div>
             </waterfall-slot>
         </waterfall>
     </div>
@@ -27,7 +27,7 @@
     import {Component} from 'vue-property-decorator'
     import Waterfall from 'vue-waterfall/lib/waterfall'
     import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot'
-    import {ItemFactory} from './item-factory'
+    import {ItemFactory} from '../store/item-factory'
 
     @Component({
         components: {
@@ -37,8 +37,11 @@
     })
     export default class Todo extends Vue {
         line = 'h'
-        items = ItemFactory.get(100)
         isBusy = false
+
+        get items () {
+            return this.$store.getters.todosBySelectedDate
+        }
 
         addItems() {
             if (!this.isBusy && this.items.length < 500) {
@@ -46,11 +49,13 @@
                 this.items.push.apply(this.items, ItemFactory.get(50))
             }
         }
+
         shuffle() {
             this.items.sort(function () {
                 return Math.random() - 0.5
             })
         }
+
         reflowed() {
             this.isBusy = false
         }

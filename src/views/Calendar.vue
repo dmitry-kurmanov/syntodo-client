@@ -14,7 +14,8 @@
 
         mounted() {
             this.instance = new Flatpickr(this.$el, {
-                onChange: this.onChange
+                onChange: this.onChange,
+                defaultDate: this.$store.state.selectedDate
             });
         }
 
@@ -23,7 +24,7 @@
         }
 
         onChange(selectedDates, dateStr, instance) {
-            alert(dateStr);
+            this.$store.commit('changeSelectedDate', dateStr)
         }
     }
 </script>

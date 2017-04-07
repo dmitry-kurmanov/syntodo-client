@@ -6,7 +6,10 @@ export const ItemFactory = (function () {
         var items = [], i
         for (i = 0; i < count; i++) {
             items[i] = {
-                index: lastIndex++,
+                id: lastIndex++,
+                isDone: false,
+                text: 'todo_' + lastIndex,
+                date: getRandomDate(),
                 style: {
                     background: getRandomColor(),
                     width: "200px",
@@ -17,6 +20,17 @@ export const ItemFactory = (function () {
             }
         }
         return items
+    }
+
+    function getRandomDate () {
+        var dates = [
+            '2017-04-01',
+            '2017-04-02',
+            '2017-04-03',
+            '2017-04-04',
+            '2017-04-05'
+        ]
+        return dates[~~(Math.random() * dates.length)]
     }
 
     function getRandomColor () {

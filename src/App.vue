@@ -4,7 +4,7 @@
             <nav>
                 <router-link to="/" exact>go to main!</router-link>
                 <router-link to="/home">Home</router-link>
-                <router-link to="/todo">Todo</router-link>
+                <router-link to="/todos">Todos</router-link>
                 <router-link to="/calendar">Calendar</router-link>
             </nav>
         </header>
