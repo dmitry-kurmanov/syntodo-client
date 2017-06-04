@@ -6,6 +6,7 @@
                 <router-link to="/home">Home</router-link>
                 <router-link to="/todos">Todos</router-link>
                 <router-link to="/calendar">Calendar</router-link>
+                <router-link to="/chat">Chat</router-link>
             </nav>
         </header>
         <transition name="fade" mode="out-in">

@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "flatpickr": "^2.4.8",
+    "socket.io-client": "^2.0.2",
     "vue": "^2.1.10",
     "vue-router": "^2.1.0",
     "vue-waterfall": "^1.0.5",

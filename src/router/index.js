@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import Todos from '../views/Todos.vue'
 import Calendar from '../views/Calendar.vue'
+import Chat from '../views/Chat.vue'
 
 Vue.use(Router)
 
@@ -13,6 +14,7 @@ export default new Router({
         { path: '/home', component: Home},
         { path: '/todos', component: Todos },
         { path: '/calendar', component: Calendar },
+        { path: '/chat', component: Chat },
         { path: '/', redirect: '/home' }
     ]
 })
